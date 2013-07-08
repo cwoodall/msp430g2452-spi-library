@@ -1,0 +1,358 @@
+******************************************************************************
+                  MSP430 Linker PC v4.1.5                      
+******************************************************************************
+>> Linked Mon Jul 08 12:44:34 2013
+
+OUTPUT FILE NAME:   <msp430g2452-spi-library.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000e20a
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000100  00000060  000000a0  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000e000   00001fe0  00000292  00001d4e  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000000  00000002  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000000  00000002  RWIX
+  INT06                 0000ffec   00000002  00000000  00000002  RWIX
+  INT07                 0000ffee   00000002  00000000  00000002  RWIX
+  INT08                 0000fff0   00000002  00000000  00000002  RWIX
+  INT09                 0000fff2   00000002  00000000  00000002  RWIX
+  INT10                 0000fff4   00000002  00000000  00000002  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    0000e000    00000000     UNINITIALIZED
+
+.bss       0    00000200    00000010     UNINITIALIZED
+                  00000200    00000010     main_test.obj (.bss)
+
+.TI.noinit 
+*          0    00000200    00000000     UNINITIALIZED
+
+.stack     0    000002b0    00000050     UNINITIALIZED
+                  000002b0    00000002     rts430_eabi.lib : boot.obj (.stack)
+                  000002b2    0000004e     --HOLE--
+
+.text      0    0000e000    00000288     
+                  0000e000    00000088     spi.obj (.text:SPI_send)
+                  0000e088    00000060     main_test.obj (.text:main)
+                  0000e0e8    0000005e     rts430_eabi.lib : autoinit.obj (.text:_auto_init)
+                  0000e146    00000032     spi.obj (.text:SPI_init)
+                  0000e178    0000002c     rts430_eabi.lib : lsl16.obj (.text)
+                  0000e1a4    00000024     ad5504.obj (.text:AD5504_init)
+                  0000e1c8    00000022     dac7512.obj (.text:DAC7512_init)
+                  0000e1ea    00000020     ad5504.obj (.text:AD5504_send)
+                  0000e20a    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  0000e224    00000014                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000e238    00000012                     : lsr32.obj (.text:l_lsr)
+                  0000e24a    00000010                     : epilog.obj (.text)
+                  0000e25a    0000000a     dac7512.obj (.text:DAC7512_send)
+                  0000e264    00000008     ad5504.obj (.text:AD5504_chip_release)
+                  0000e26c    00000008     ad5504.obj (.text:AD5504_chip_select)
+                  0000e274    00000006     dac7512.obj (.text:DAC7512_chip_release)
+                  0000e27a    00000006     dac7512.obj (.text:DAC7512_chip_select)
+                  0000e280    00000004     rts430_eabi.lib : pre_init.obj (.text:_system_pre_init)
+                  0000e284    00000004                     : exit.obj (.text:abort)
+
+.cinit     0    0000e288    0000000a     
+                  0000e288    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000e28c    00000002     (__TI_handler_table)
+                  0000e28e    00000004     (__TI_cinit_table)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000e28e records: 1, size/record: 4, table size: 4
+	.bss: load addr=0000e288, load size=00000004 bytes, run addr=00000200, run size=00000010 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000e28c records: 1, size/record: 2, table size: 2
+	index: 0, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+0000e264   AD5504_chip_release
+0000e26c   AD5504_chip_select
+0000e1a4   AD5504_init
+0000e1ea   AD5504_send
+0000004a   ADC10AE0
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000e284   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000005b   CAPD
+0000e274   DAC7512_chip_release
+0000e27a   DAC7512_chip_select
+0000e1c8   DAC7512_init
+0000e25a   DAC7512_send
+00000056   DCOCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000000   IE1
+00000002   IFG1
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+00000041   P1SEL2
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000042   P2SEL2
+0000e146   SPI_init
+0000e000   SPI_send
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000160   TA0CTL
+0000012e   TA0IV
+00000170   TA0R
+0000007a   USICCTL
+0000007a   USICKCTL
+0000007b   USICNT
+00000078   USICTL
+00000078   USICTL0
+00000079   USICTL1
+0000007c   USISR
+0000007d   USISRH
+0000007c   USISRL
+00000120   WDTCTL
+00000300   __STACK_END
+00000050   __STACK_SIZE
+0000e28e   __TI_CINIT_Base
+0000e292   __TI_CINIT_Limit
+0000e28c   __TI_Handler_Table_Base
+0000e28e   __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+00000001   __TI_args_main
+00000001   __TI_exit
+0000e224   __TI_zero_init
+ffffffff   __binit__
+ffffffff   __c_args__
+0000e256   __mspabi_func_epilog_1
+0000e254   __mspabi_func_epilog_2
+0000e252   __mspabi_func_epilog_3
+0000e250   __mspabi_func_epilog_4
+0000e24e   __mspabi_func_epilog_5
+0000e24c   __mspabi_func_epilog_6
+0000e24a   __mspabi_func_epilog_7
+0000e178   __mspabi_slli
+0000e1a0   __mspabi_slli_1
+0000e18e   __mspabi_slli_10
+0000e18c   __mspabi_slli_11
+0000e18a   __mspabi_slli_12
+0000e188   __mspabi_slli_13
+0000e186   __mspabi_slli_14
+0000e184   __mspabi_slli_15
+0000e19e   __mspabi_slli_2
+0000e19c   __mspabi_slli_3
+0000e19a   __mspabi_slli_4
+0000e198   __mspabi_slli_5
+0000e196   __mspabi_slli_6
+0000e194   __mspabi_slli_7
+0000e192   __mspabi_slli_8
+0000e190   __mspabi_slli_9
+0000e238   __mspabi_srll
+0000e0e8   _auto_init
+0000e20a   _c_int00
+0000e20a   _c_int00_noexit
+0000fffe   _reset_vector
+000002b0   _stack
+0000e280   _system_pre_init
+0000e284   abort
+00000200   ad5504
+ffffffff   binit
+00000208   dac7512
+0000e088   main
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   __TI_args_main
+00000001   __TI_exit
+00000002   IFG1
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000041   P1SEL2
+00000042   P2SEL2
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+00000050   __STACK_SIZE
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+00000078   USICTL
+00000078   USICTL0
+00000079   USICTL1
+0000007a   USICCTL
+0000007a   USICKCTL
+0000007b   USICNT
+0000007c   USISR
+0000007c   USISRL
+0000007d   USISRH
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TA0IV
+00000160   TA0CTL
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000170   TA0R
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000200   ad5504
+00000208   dac7512
+000002b0   _stack
+00000300   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000e000   SPI_send
+0000e088   main
+0000e0e8   _auto_init
+0000e146   SPI_init
+0000e178   __mspabi_slli
+0000e184   __mspabi_slli_15
+0000e186   __mspabi_slli_14
+0000e188   __mspabi_slli_13
+0000e18a   __mspabi_slli_12
+0000e18c   __mspabi_slli_11
+0000e18e   __mspabi_slli_10
+0000e190   __mspabi_slli_9
+0000e192   __mspabi_slli_8
+0000e194   __mspabi_slli_7
+0000e196   __mspabi_slli_6
+0000e198   __mspabi_slli_5
+0000e19a   __mspabi_slli_4
+0000e19c   __mspabi_slli_3
+0000e19e   __mspabi_slli_2
+0000e1a0   __mspabi_slli_1
+0000e1a4   AD5504_init
+0000e1c8   DAC7512_init
+0000e1ea   AD5504_send
+0000e20a   _c_int00
+0000e20a   _c_int00_noexit
+0000e224   __TI_zero_init
+0000e238   __mspabi_srll
+0000e24a   __mspabi_func_epilog_7
+0000e24c   __mspabi_func_epilog_6
+0000e24e   __mspabi_func_epilog_5
+0000e250   __mspabi_func_epilog_4
+0000e252   __mspabi_func_epilog_3
+0000e254   __mspabi_func_epilog_2
+0000e256   __mspabi_func_epilog_1
+0000e25a   DAC7512_send
+0000e264   AD5504_chip_release
+0000e26c   AD5504_chip_select
+0000e274   DAC7512_chip_release
+0000e27a   DAC7512_chip_select
+0000e280   _system_pre_init
+0000e284   C$$EXIT
+0000e284   abort
+0000e28c   __TI_Handler_Table_Base
+0000e28e   __TI_CINIT_Base
+0000e28e   __TI_Handler_Table_Limit
+0000e292   __TI_CINIT_Limit
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+
+[123 symbols]

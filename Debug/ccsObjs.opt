@@ -1,0 +1,1 @@
+"./src/spi.obj" "./src/main_test.obj" "./src/dac7512.obj" "./src/ad5620.obj" "./src/ad5504.obj" -l"libc.a" "../lnk_msp430g2452.cmd" 
