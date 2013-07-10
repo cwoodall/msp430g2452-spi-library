@@ -23,6 +23,9 @@ void SPI_init()
 	USICTL0  &= ~USISWRST;           // release for operation
 }
 
+/**
+ * Set the SPI mode, spi.h defines SPI_MODE_[0..3] and CPHA_bit and CPOL_but for use in configuration
+ */
 inline void SPI_set_mode(uint8_t spi_mode) {
 	if (spi_mode & CPHA_bit) {
 		USICTL1    &= ~USICKPH;                      // CPHA=1
@@ -37,6 +40,10 @@ inline void SPI_set_mode(uint8_t spi_mode) {
 	}
 }
 
+/**
+ * Generic function for sending SPI data, relatively slow throughput with this
+ * particular method because SPI mode gets set every time a spi send occurs.
+ */
 void SPI_send(spi_device_t *spi_dev, uint32_t value, uint16_t cs_arg) {
 	int bits_sent = 0;
 	SPI_set_mode(spi_dev->spi_mode);
