@@ -2,7 +2,7 @@
  * spi.c
  *
  *  Created on: Jun 21, 2013
- *      Author: Admin
+ *      Author: Christopher Woodall
  */
 #include "spi/spi.h"
 #include <msp430g2452.h>
@@ -49,6 +49,6 @@ void SPI_send(spi_device_t *spi_dev, uint32_t value, uint16_t cs_arg) {
 		while (!(USICTL1&USIIFG));
 		bits_sent += bits_to_send;
 	}
-
+	__delay_cycles(2);
 	spi_dev->chip_release(cs_arg);
 }

@@ -2,7 +2,7 @@
  * dac7512.c
  *
  *  Created on: Jun 21, 2013
- *      Author: Admin
+ *      Author: Christopher Woodall
  */
 #include <msp430g2452.h>
 #include <stdint.h>
@@ -11,7 +11,7 @@
 void DAC7512_init(spi_device_t *dev) {
 	P1DIR |= BIT3;
 	dev->bits = 16;
-	dev->spi_mode = SPI_MODE_2;
+	dev->spi_mode = SPI_MODE_3;
 	dev->delay_cycles = 10;
 	dev->chip_select  = *DAC7512_chip_select;
 	dev->chip_release = *DAC7512_chip_release;

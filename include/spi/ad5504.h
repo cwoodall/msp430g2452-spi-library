@@ -1,8 +1,8 @@
-/*
+/**
  * ad5504.h
  *
  *  Created on: Jun 21, 2013
- *      Author: Admin
+ *      Author: Christopher Woodall
  */
 
 #ifndef AD5504_H_
@@ -10,6 +10,7 @@
 #include <msp430g2452.h>
 #include <stdint.h>
 #include "spi/spi.h"
+
 
 #define AD5504_CHA  0x1 // AD5504 Channel A Address
 #define AD5504_CHB  0x2 // AD5504 Channel B Address

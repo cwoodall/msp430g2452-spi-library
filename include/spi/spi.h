@@ -2,7 +2,7 @@
  * spi.h
  *
  *  Created on: Jun 21, 2013
- *      Author: Admin
+ *      Author: Christopher Woodall
  */
 
 #ifndef SPI_H_
